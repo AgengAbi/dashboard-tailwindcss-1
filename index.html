@@ -14,6 +14,10 @@
 		body{
 			font-family: Lato;
 		}
+		.nav-open{
+			top: 8%;
+			transform: translateY(-116%);
+		}
 	</style>
 </head>
 <body>
@@ -21,12 +25,13 @@
 		<div class="sidebar-menu flex-none w-full lg:w-1/6 bg-gray-800 overflow-y-auto flex flex-col ">
 			<div class="nav-side flex justify-around items-center flex-none h-16 flex lg:justify-center lg:items-center">
 				<svg
-						class= "menu lg:hidden"
+						class= "menu lg:hidden cursor-pointer"
 						width= "43"
-						height= "23"
+						height= "18"
 						viewBox= "0 0 43 23"
 						fill= "none"
 						xmlns= "https://www.w3.org/2000/svg"
+						onclick="myButton()"
 					>
 						<line y1="1.5" x2="43" y2="1.5" stroke="white" stroke-width="3" />
 						<line y1="11.5" x2="43" y2="11.5" stroke="white" stroke-width="3" />
@@ -46,6 +51,55 @@
 					</div>
 				</div>
 			</div>
+					<div class="flex flex-col block lg:hidden -translate-y-full absolute w-full bg-gray-800 nav-open z-10">
+						<ul>
+							<li>
+							  <a href="" class="">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-home" aria-hidden="true" class="mr-2"></i>&nbsp;Home</span>
+							  </a>
+							</li>
+							<li>
+							  <a href="" class="">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-dropbox" aria-hidden="true"></i>&nbsp;Interface</span>
+							  </a>
+							</li>
+							<li>
+							  <a href="" class="">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Form</span>
+							  </a>
+							</li>
+							<li>
+							  <a href="" class="">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-star-o" aria-hidden="true"></i>&nbsp;Extra</span>
+							  </a>
+							</li>
+							  <a href="#" class="collapsible">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white active"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;Layout <i class="fa fa-caret-down float-right mt-1" aria-hidden="true"></i></span>
+							  </a>
+							  <ul class="content w-full overflow-hidden hidden">
+							  	<li class="py-2">
+							  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Horizontal</a>
+							  	</li>
+							  	<li class="py-2">
+							  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Vertical</a>
+							  	</li>
+							  	<li class="py-2">
+							  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Single</a>
+							  	</li>
+							  	<li class="py-2">
+							  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Combo</a>
+							  	</li>
+							  </ul>
+							</li>
+							  <a href="#" class="collapsible">
+							  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-folder-open-o" aria-hidden="true"></i>&nbsp;Docs <i class="fa fa-caret-down float-right mt-1" aria-hidden="true"></i></span>
+							  </a>
+							  <div class="content w-full overflow-hidden hidden">
+							  	<p class="w-full pl-10 py-2 text-gray-500 hover:text-white">Typo</p>
+							  </div>
+							</li>
+						</ul>
+					</div>
 			<div class="flex-1 flex flex-col py-6 hidden lg:block">
 				<ul>
 					<li>
@@ -68,14 +122,25 @@
 					  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-star-o" aria-hidden="true"></i>&nbsp;Extra</span>
 					  </a>
 					</li>
-					  <a href="" class="collapsible">
+					  <a href="#" class="collapsible">
 					  	<span class="block px-4 py-2 text-gray-500 hover:text-white active"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;Layout <i class="fa fa-caret-down float-right mt-1" aria-hidden="true"></i></span>
 					  </a>
-					  <div class="content w-full overflow-hidden hidden">
-					  	<p class="w-full pl-10 py-2 text-gray-500 hover:text-white">Horizontal</p>
-					  </div>
+					  <ul class="content w-full overflow-hidden hidden">
+					  	<li class="py-2">
+					  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Horizontal</a>
+					  	</li>
+					  	<li class="py-2">
+					  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Vertical</a>
+					  	</li>
+					  	<li class="py-2">
+					  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Single</a>
+					  	</li>
+					  	<li class="py-2">
+					  		<a class="w-full pl-10 py-2 text-gray-500 hover:text-white" href="">Combo</a>
+					  	</li>
+					  </ul>
 					</li>
-					  <a href="" class="collapsible">
+					  <a href="#" class="collapsible">
 					  	<span class="block px-4 py-2 text-gray-500 hover:text-white"><i class="fa fa-folder-open-o" aria-hidden="true"></i>&nbsp;Docs <i class="fa fa-caret-down float-right mt-1" aria-hidden="true"></i></span>
 					  </a>
 					  <div class="content w-full overflow-hidden hidden">
@@ -453,6 +518,8 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
 	<script>
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart(ctx, {
@@ -492,20 +559,48 @@
 			}
 		});
 
-		var coll = document.getElementsByClassName("collapsible");
+		var dropdown = document.getElementsByClassName('collapsible');
 		var i;
 
-		for (i = 0; i < coll.length; i++) {
-		  coll[i].addEventListener("click", function() {
-		    this.classList.toggle("active");
-		    var content = this.nextElementSibling;
-		    if (content.style.display === "block") {
-		      content.style.display = "none";
-		    } else {
-		      content.style.display = "block";
-		    }
-		  });
+		for(i = 0;i < dropdown.length; i++){
+			dropdown[i].addEventListener('click', function() {
+				this.classList.toggle('text-white');
+				var dropdownContent = this.nextElementSibling;
+				if(dropdownContent.style.display === 'block') {
+					dropdownContent.style.display = 'none';
+				} else {
+					dropdownContent.style.display = 'block';
+				}
+			});
 		}
+
+		function init(){
+			const hamburger = document.querySelector('.menu');
+			const navOpen = document.querySelector('.nav-open');
+			const list = document.querySelector('.menu ul');
+
+			const tl = new TimelineMax({paused: true, reversed: true});
+
+			tl.to(navOpen, 0.5, {y:0})
+			fromTo(list, 0.3, {opacity :0, y:-10}, {opacity :1, y:0});
+
+			hamburger.addEventListener('click', () => {
+				tl.reversed() ? tl.play : tl.reverse();
+			});
+		}
+
+		init();
+
+		// function myButton(){
+		// 	const hamburger = document.getElementsByClassName('menu');
+		// 	const navOpen = document.getElementsByClassName('nav-open');
+
+		// 	if(navOpen.style.display === 'none') {
+		// 		navOpen.style.display = 'content';
+		// 	} else {
+		// 		navOpen.style.display = 'none';
+		// 	}
+		// }
 	</script>
 </body>
 </html>
